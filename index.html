@@ -15,15 +15,17 @@
             font-family: 'Georgia', serif;
             color: #333;
             background-color: #f5f0e8;
-            min-width: 540px; /* Fuerza el ancho mínimo */
-            overflow-x: auto; /* Permite scroll horizontal */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            min-height: 100vh;
         }
 
         .invitacion-container {
-            width: 540px;
-            height: 4222px;
+            width: 500px;
+            height: 3909px;
             position: relative;
-            margin: 0 auto; /* Centra en pantallas grandes */
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             background-image: url('Invitación-boda-hilda.jpg');
@@ -50,7 +52,7 @@
 
         .boton {
             display: inline-block;
-            padding: 20px 50px;
+            padding: 5px 50px;
             background: #7a5c3c;
             color: white;
             text-decoration: none;
@@ -70,14 +72,14 @@
             margin: 40px 0;
             display: flex;
             justify-content: center;
-            min-height: 200px;
+            min-height: 70px;
         }
 
         /* ESTILOS PARA EL IFRAME SIN BORDES */
         .contenedor-conteo iframe {
             border: none;
             width: 100%;
-            height: 200px;
+            height: 70px;
             background: transparent;
         }
 
@@ -87,56 +89,19 @@
 
         /* Espaciadores específicos */
         .espaciador-superior {
-            height: 2250px;
+            height: 1130px;
         }
 
         .espaciador-lugar {
-            height: 40px;
+            height: 18px;
         }
 
         .espaciador-confirmar {
-            height: 4060px;
-        }
-
-        /* Para móviles - permite scroll horizontal */
-        @media (max-width: 540px) {
-            body {
-                padding: 10px 0;
-            }
-            
-            .invitacion-container {
-                margin: 0; /* Quita el centrado en móviles */
-            }
-        }
-
-        /* Mensaje opcional para móviles */
-        .mobile-notice {
-            display: none;
-            text-align: center;
-            padding: 10px;
-            background: #ffeb3b;
-            color: #333;
-            font-size: 14px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        @media (max-width: 540px) {
-            .mobile-notice {
-                display: block;
-            }
+            height: 1830px;
         }
     </style>
 </head>
 <body>
-    <!-- Mensaje para móviles -->
-    <div class="mobile-notice">
-        📱 Desliza horizontalmente para ver toda la invitación
-    </div>
-
     <div class="invitacion-container">
         <div class="contenido">
             <!-- ESPACIADOR PARA BAJAR EL CONTADOR -->
@@ -155,7 +120,6 @@
                 <a href="https://goo.gl/maps/..." class="boton" target="_blank">LUGAR</a>
             </div>
 			
-            <!-- ESPACIADOR PARA BAJAR BOTON CONFIRMAR -->
             <div class="espaciador-confirmar"></div>
 			
             <!-- Boton confirmar -->
@@ -167,15 +131,5 @@
             <div class="espaciador"></div>
         </div>
     </div>
-
-    <script>
-        // Opcional: Ocultar el mensaje móvil después de 5 segundos
-        setTimeout(function() {
-            var notice = document.querySelector('.mobile-notice');
-            if (notice) {
-                notice.style.display = 'none';
-            }
-        }, 5000);
-    </script>
 </body>
 </html>
