@@ -15,297 +15,167 @@
             font-family: 'Georgia', serif;
             color: #333;
             background-color: #f5f0e8;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
+            min-width: 540px; /* Fuerza el ancho mínimo */
+            overflow-x: auto; /* Permite scroll horizontal */
         }
 
         .invitacion-container {
-            width: 1080px;
-            height: 8444px;
+            width: 540px;
+            height: 4222px;
             position: relative;
+            margin: 0 auto; /* Centra en pantallas grandes */
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .fondo-imagen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("Invitación-boda-hilda.jpg");
+            background-image: url('Invitación-boda-hilda.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: 1;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.0);
-            z-index: 2;
         }
 
         .contenido {
             position: relative;
-            z-index: 3;
+            z-index: 1;
             padding: 80px 100px;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
 
-        .encabezado {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .titulo-principal {
-            font-size: 72px;
-            margin-bottom: 30px;
-            color: #5a3921;
-            font-weight: normal;
-            letter-spacing: 3px;
-        }
-
-        .subtitulo {
-            font-size: 32px;
-            margin-bottom: 50px;
-            color: #7a5c3c;
-        }
-
-        .versiculo {
-            text-align: center;
-            margin: 40px 0;
-            padding: 40px;
-            background: rgba(245, 240, 232, 0.8);
-            border-radius: 10px;
-            border-left: 5px solid #7a5c3c;
-        }
-
-        .versiculo p {
-            margin: 15px 0;
-            line-height: 1.6;
-            font-size: 24px;
-        }
-
-        .cita-biblica {
-            font-weight: bold;
-            margin-top: 20px;
-            color: #5a3921;
-            font-size: 26px;
-        }
-
-        .fecha-hora {
-            text-align: center;
-            margin: 60px 0;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .fecha-hora h2 {
-            font-size: 42px;
-            margin-bottom: 30px;
-            color: #5a3921;
-        }
-
-        .fecha {
-            font-size: 48px;
-            font-weight: bold;
-            color: #7a5c3c;
-        }
-
-        .detalles {
+        .contenedor-botones {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 40px;
             margin: 40px 0;
         }
 
-        .seccion {
-            flex: 1;
-            min-width: 300px;
-            margin: 20px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .seccion h3 {
-            color: #5a3921;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e0d5c5;
-            padding-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .seccion p {
-            font-size: 22px;
-            margin: 12px 0;
-        }
-
-        .confirmacion {
-            text-align: center;
-            margin: 60px 0;
-            padding: 50px;
-            background: rgba(245, 240, 232, 0.9);
-            border-radius: 15px;
-        }
-
-        .confirmacion p {
-            font-size: 26px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn-confirmar {
+        .boton {
             display: inline-block;
             padding: 20px 50px;
             background: #7a5c3c;
             color: white;
             text-decoration: none;
             border-radius: 35px;
-            margin-top: 20px;
             font-weight: bold;
             font-size: 24px;
             transition: background 0.3s;
+            text-align: center;
         }
 
-        .btn-confirmar:hover {
+        .boton:hover {
             background: #5a3921;
         }
 
-        .nota-adultos {
-            text-align: center;
-            font-size: 22px;
-            color: #666;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 2px solid #ddd;
+        .contenedor-conteo {
+            width: 100%;
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        /* ESTILOS PARA EL IFRAME SIN BORDES */
+        .contenedor-conteo iframe {
+            border: none;
+            width: 100%;
+            height: 200px;
+            background: transparent;
         }
 
         .espaciador {
             flex-grow: 1;
         }
 
-        /* Secciones adicionales para llenar la altura */
-        .galeria {
-            display: flex;
-            justify-content: space-between;
-            margin: 60px 0;
+        /* Espaciadores específicos */
+        .espaciador-superior {
+            height: 2250px;
         }
 
-        .foto {
-            width: 30%;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #7a5c3c;
+        .espaciador-lugar {
+            height: 40px;
         }
 
-        .mensaje-especial {
+        .espaciador-confirmar {
+            height: 4060px;
+        }
+
+        /* Para móviles - permite scroll horizontal */
+        @media (max-width: 540px) {
+            body {
+                padding: 10px 0;
+            }
+            
+            .invitacion-container {
+                margin: 0; /* Quita el centrado en móviles */
+            }
+        }
+
+        /* Mensaje opcional para móviles */
+        .mobile-notice {
+            display: none;
             text-align: center;
-            margin: 60px 0;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            font-size: 24px;
-            line-height: 1.6;
+            padding: 10px;
+            background: #ffeb3b;
+            color: #333;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
-        .hashtag {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 28px;
-            color: #7a5c3c;
-            font-weight: bold;
+        @media (max-width: 540px) {
+            .mobile-notice {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mensaje para móviles -->
+    <div class="mobile-notice">
+        📱 Desliza horizontalmente para ver toda la invitación
+    </div>
+
     <div class="invitacion-container">
-        <div class="fondo-imagen"></div>
-        <div class="overlay"></div>
-        
-        <!--<div class="contenido">
-            <div class="encabezado">
-                <h1 class="titulo-principal">NOS CASAMOS</h1> 
-                <p class="subtitulo">HOMBRE + DIOS + MUJER</p>
-                
-                <div class="versiculo">
-                    <p>"Uno solo puede ser vencido,</p>
-                    <p>pero dos pueden resistir;</p>
-                    <p>cordón de tres dobleces</p>
-                    <p>no se rompe fácilmente."</p>
-                    <p class="cita-biblica">ECLESIASTES 4:12</p>
-                </div>
+        <div class="contenido">
+            <!-- ESPACIADOR PARA BAJAR EL CONTADOR -->
+            <div class="espaciador-superior"></div>
+            
+            <!-- Contenedor para el contador externo -->
+            <div class="contenedor-conteo">
+                <iframe src="contador.html" title="Conteo regresivo de la boda"></iframe>
             </div>
 
-            <div class="fecha-hora">
-                <h2>ESTÁS INVITADO A</h2>
-                <p class="fecha">SÁBADO 17 - 3:00 PM</p>
+            <!-- ESPACIADOR PARA BAJAR BOTON LUGAR -->
+            <div class="espaciador-lugar"></div>			
+            <!-- Boton lugar -->
+            <div class="contenedor-botones">
+                <!-- Botón LUGAR - Enlace a Google Maps -->
+                <a href="https://goo.gl/maps/..." class="boton" target="_blank">LUGAR</a>
             </div>
-
-            <div class="detalles">
-                <div class="seccion">
-                    <h3>LUGAR</h3>
-                    <p>[Nombre del lugar]</p>
-                    <p>[Dirección completa]</p>
-                </div>
-
-                <div class="seccion">
-                    <h3>CÓDIGO DE VESTIMENTA</h3>
-                    <p>CASUAL</p>
-                </div>
-
-                <div class="seccion">
-                    <h3>ITINERARIO</h3>
-                    <p><strong>CEREMONIA:</strong> [Hora]</p>
-                    <p><strong>BRINDIS:</strong> [Hora]</p>
-                    <p><strong>CENA:</strong> [Hora]</p>
-                    <p><strong>CELEBRACIÓN:</strong> [Hora]</p>
-                </div>
-            </div>-->
-
-            <div class="galeria">
-                <div class="foto">Foto de la pareja 1</div>
-                <div class="foto">Foto de la pareja 2</div>
-                <div class="foto">Foto de la pareja 3</div>
+			
+            <!-- ESPACIADOR PARA BAJAR BOTON CONFIRMAR -->
+            <div class="espaciador-confirmar"></div>
+			
+            <!-- Boton confirmar -->
+            <div class="contenedor-botones">
+                <!-- Botón CONFIRMAR - Enlace a formulario de Google -->
+                <a href="https://forms.gle/..." class="boton" target="_blank">CONFIRMAR</a>
             </div>
-
-            <div class="mensaje-especial">
-                <p>Este día tan especial será inolvidable gracias a la compañía de nuestros seres queridos. Cada uno de ustedes ha sido parte importante de nuestra historia de amor y queremos compartir este momento único con quienes más apreciamos.</p>
-            </div>
-
-            <div class="confirmacion">
-                <p>HEMOS ENCONTRADO EN CADA UNO EL COMPAÑERO PERFECTO Y QUEREMOS CELEBRAR NUESTRA UNIÓN CON LAS PERSONAS QUE HAN SIDO PARTE DE NUESTRA HISTORIA, POR LO QUE ES IMPORTANTE QUE NOS CONFIRMES TU ASISTENCIA</p>
-                <a href="#" class="btn-confirmar">CONFIRMAR ASISTENCIA</a>
-            </div>
-
-            <div class="hashtag">
-                #NuestraBodaPerfecta2023
-            </div>
-
-            <div class="nota-adultos">
-                <p>Agradecemos su comprensión al entender que este evento está reservado para adultos solamente.</p>
-                <p>¡Gracias!</p>
-            </div>
-
+            
             <div class="espaciador"></div>
         </div>
     </div>
+
+    <script>
+        // Opcional: Ocultar el mensaje móvil después de 5 segundos
+        setTimeout(function() {
+            var notice = document.querySelector('.mobile-notice');
+            if (notice) {
+                notice.style.display = 'none';
+            }
+        }, 5000);
+    </script>
 </body>
 </html>
