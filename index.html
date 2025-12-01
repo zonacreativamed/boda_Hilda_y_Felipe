@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación de Boda</title>
+	
+	<!-- Importar fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	
     <style>
         * {
             margin: 0;
@@ -25,11 +31,11 @@
         .invitacion-container {
             width: 100%;
             max-width: 500px;
-            aspect-ratio: 500 / 3909; /* Mantiene la proporción original */
+            aspect-ratio: 500 / 4400; /* Mantiene la proporción original */
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background-image: url('Invitación-boda-hilda.jpg');
+            background-image: url('Invitación-boda-hilda1.jpg');
             background-size: contain; /* Mantiene toda la imagen visible */
             background-position: top center;
             background-repeat: no-repeat;
@@ -44,7 +50,7 @@
             display: flex;
             flex-direction: column;
         }
-
+		
         .contenedor-botones {
             display: flex;
             justify-content: center;
@@ -65,13 +71,50 @@
             transition: background 0.3s;
             text-align: center;
             min-width: 120px;
+            cursor: pointer;
         }
 
         .boton:hover {
             background: #5a3921;
         }
 
-        .contenedor-conteo {
+        /* Botón de música con estilo especial */
+        .boton-musica {
+            background: transparent;
+            border: 2px solid #7a5c3c;
+            color: #7a5c3c;
+            padding: 10px 20px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            min-width: auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .boton-musica:hover {
+            background: #7a5c3c;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .boton-musica.reproduciendo {
+            background: #7a5c3c;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+	        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+         .contenedor-conteo {
             width: 100%;
             margin: 20px 0;
             display: flex;
@@ -87,21 +130,99 @@
             background: transparent;
         }
 
+        .contenedor-textos1 {
+		}
+			
         .espaciador {
             flex-grow: 1;
         }
 
-        /* Espaciadores en porcentajes para mantener proporción */
-        .espaciador-superior {
-            height: 31.8%; /* 1950px / 3909px ≈ 49.8% */
+		        /* Contenedor para el botón de música */
+        .contenedor-musica {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Estilo para el texto NOS CASAMOS */
+        .texto-nos-casamos {
+            font-size: 15px;
+            font-weight: bold;
+            color: #7a5c3c;
+            text-align: center;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+
+        /* Estilo para el texto generico */
+        .texto-generico {
+            font-size: 15px;
+            font-weight: normal;
+            color: #7a5c3c;
+            text-align: center;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+
+        /* Estilo para el texto Hilda & Felipe con Great Vibes */
+        .texto-hyf {
+            font-size: 65px;
+            font-weight: normal;
+            color: #D7A858;
+            text-align: center;
+            margin: 0;
+            text-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+            letter-spacing: 0px;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* Estilo para la imagen de fecha */
+        .imagen-fecha {
+            max-width: 80%;
+            height: auto;
+            margin: 0px 0;
+            border-radius: 0px;
+            box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+        }
+
+        .contenedor-imagenes {
+        }
+
+        /* Espaciador antes de contador */
+        .contenedor-texto2 {
+        }
+		
+		.contenedor-texto3 {
+			font-size: 15px;
+		}
+		
+        .espaciador-play {
+            height: 2.1%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .espaciador-lugar {
-            height: 0.00%; /* 1px / 3909px ≈ 0.025% */
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        .espaciador-confirmar {
-            height: 46.8%; /* 3400px / 3909px ≈ 86.9% */
+         /* Mensaje de instrucción para la música */
+        .mensaje-musica {
+            text-align: center;
+            font-size: 12px;
+            color: #7a5c3c;
+            margin-top: 5px;
+            font-style: italic;
         }
 
         /* Para pantallas muy pequeñas */
@@ -111,9 +232,35 @@
                 font-size: 14px;
                 min-width: 100px;
             }
+          
+             .boton-musica {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }   
+			 
+			.texto-hyf {
+                font-size: 36px;
+                letter-spacing: 1px;
+            }
             
             .contenedor-botones {
                 gap: 10px;
+            }
+            
+            .mensaje-musica {
+                font-size: 10px;
+            }
+            
+            .imagen-fecha {
+                max-width: 90%;
+            }
+        }
+
+        /* Para pantallas entre 351px y 500px */
+        @media (max-width: 500px) and (min-width: 351px) {
+            .texto-hyf {
+                font-size: 48px;
             }
         }
 
@@ -128,33 +275,162 @@
 <body>
     <div class="invitacion-container">
         <div class="contenido">
-            <!-- ESPACIADOR PARA BAJAR EL CONTADOR -->
-            <div class="espaciador-superior"></div>
+			
+				
+ 				<img src="imagen1.png">
+
+                <div class="contenedor-musica">
+                    <button class="boton boton-musica" id="boton-musica">
+                        ♫ 
+                    </button>
+                    <!--<div class="mensaje-musica">Haz clic para reproducir música</div> -->
+                </div>
             
-            <!-- Contenedor para el contador externo -->
+			
+            <!-- TEXTO NOS CASAMOS -->
+            <br><h2 class="texto-nos-casamos">NOS CASAMOS</h2>			
+
+            <!-- TEXTO HILDA Y FELIPE -->
+            <h2 class="texto-hyf">Hilda & Felipe</h2>
+			
+            <!-- TEXTO hombre dios mujer -->
+            <h2 class="texto-generico">HOMBRE + DIOS + MUJER<br>
+			UNO SOLO PUEDE SER VENCIDO,<br>
+			PERO DOS PUEDEN RESISTIR:<br>
+			CORDÓN DE TRES DOBLECES<br>
+			NO SE ROMPE FACILMENTE.<br>
+			ECLESIASTÉS 4:12</h2>	
+
+			<img src="imagen2.png">
+			
+        <div class="contenedor-texto2">
+            <!-- TEXTO ESTAS INVITADO -->
+            <h2 class="texto-nos-casamos">ESTAS INVTADO A</h2>
+
+            <!-- TEXTO NUESTRA BODA -->
+            <h2 class="texto-hyf">Nuestra boda</h2>
+
+			<!-- Contenedor para el contador externo -->
             <div class="contenedor-conteo">
                 <iframe src="contador.html" title="Conteo regresivo de la boda"></iframe>
             </div>
 
             <!-- ESPACIADOR PARA BAJAR BOTON LUGAR -->
-            <div class="espaciador-lugar"></div>			
+            <div class="espaciador-lugar">
+                <!-- Imagen de fecha -->
+                <img src="fecha.png" alt="Fecha de la boda" class="imagen-fecha">
+            </div>			
+			
             <!-- Boton lugar -->
             <div class="contenedor-botones">
                 <!-- Botón LUGAR - Enlace a Google Maps -->
-                <a href="https://goo.gl/maps/..." class="boton" target="_blank">LUGAR</a>
+                <a href="https://maps.app.goo.gl/KxH1YvoAzE81Z7cCA" class="boton" target="_blank">LUGAR</a>
             </div>
+
+            <!-- TEXTO NOMBRE DEL LUGAR -->
+            <h2 class="texto-nos-casamos">NOMBRE DEL LUGAR</h2><br>
+		</div>
 			
-            <!-- ESPACIADOR PARA BAJAR BOTON CONFIRMAR -->
-            <div class="espaciador-confirmar"></div>
+ 	        <!-- CONTENEDOR IMAGEN3 -->
+			<img src="imagen3.png"
+
+		  <!-- TEXTO CODIGO DE VESTIMENTA -->
+            <h2 class="texto-hyf">Dress Code</h2>	 
+
+			<img src="vestido.png">
 			
+			<!-- TEXTO CASUAL -->
+            <h2 class="texto-nos-casamos">CASUAL</h2>
+						
+            <!-- Boton confirmar -->
+            <div class="contenedor-botones">
+                <!-- Botón CONFIRMAR - Enlace a formulario de Google -->
+                <div class="boton">ITINERARIO
+                </div>
+			</div>
+				
+			<img src="imagen4.png">
+				
+			<h2 class="texto-hyf">Lluvia de sobres</h2>	 
+
+			<img src="imagen5.png">
+				 
+			<!-- TEXTO NOSOTROS -->
+            <h2 class="texto-nos-casamos">NOSOTROS</h2>
+				
+			<!-- TEXTO HILDA Y FELIPE -->
+            <h2 class="texto-hyf">Hilda & Felipe</h2>
+				
+            <!-- TEXTO INVITACIÓNA CONFIRMAR -->
+            <h2 class="texto-generico">HEMOS ENCONTRADO EN CADA UNO<br>EL COMPAÑERO PERFECTO<BR>Y QUEREMOS CELEBRAR NUESTRA UNIÓN<BR>
+			CON LAS PERSONAS QUE HAN SIDO<BR>PARTE DE NUESTRA HISTORIA,<BR>POR ESO ES IMPORTANTE QUE NOS<BR>
+			CONFIRMES TU ASISTENCIA</h2>
+
             <!-- Boton confirmar -->
             <div class="contenedor-botones">
                 <!-- Botón CONFIRMAR - Enlace a formulario de Google -->
                 <a href="https://forms.gle/..." class="boton" target="_blank">CONFIRMAR</a>
             </div>
             
+            <!-- TEXTO AGRADECIMIENTO CONFIRMACION -->
+            <h2 class="texto-generico">¡AGRADECEMOS SU COMPRESIÓN<BR>AL ENTENDER QUE ESTE EVENTO<BR>ESTÁ RESERVADO SOLAMENTE PARA ADULTOS!</h2>
+
+			<img src="imagen6.png">
+		            
             <div class="espaciador"></div>
         </div>
     </div>
+	
+	<script>
+        const botonMusica = document.getElementById('boton-musica');
+        let musicaReproduciendo = false;
+        
+        // Crear elemento de audio con tu archivo local
+        const audio = new Audio();
+        audio.src = 'que-suerte-tenerte.mp3'; // Archivo local en la misma carpeta
+        audio.loop = true;
+        
+        // Manejar errores de carga de audio
+        audio.addEventListener('error', function(e) {
+            console.error('Error al cargar el audio:', e);
+            document.querySelector('.mensaje-musica').textContent = 'Error al cargar la música';
+            botonMusica.disabled = true;
+            botonMusica.style.opacity = '0.5';
+        });
+        
+        // Cuando el audio se carga correctamente
+        audio.addEventListener('canplaythrough', function() {
+            console.log('Audio cargado correctamente');
+            document.querySelector('.mensaje-musica').textContent = 'Haz clic para reproducir música';
+        });
+        
+        botonMusica.addEventListener('click', function() {
+            if (!musicaReproduciendo) {
+                // Reproducir música
+                audio.play().then(() => {
+                    musicaReproduciendo = true;
+                    botonMusica.innerHTML = "❚❚";
+                    botonMusica.classList.add('reproduciendo');
+                    document.querySelector('.mensaje-musica').textContent = 'Música reproduciendo - Qué suerte tenerte';
+                }).catch(error => {
+                    console.log('Error al reproducir:', error);
+                    document.querySelector('.mensaje-musica').textContent = 'Haz clic nuevamente para permitir audio';
+                });
+            } else {
+                // Pausar música
+                audio.pause();
+                musicaReproduciendo = false;
+                botonMusica.innerHTML = "♫";
+                botonMusica.classList.remove('reproduciendo');
+                document.querySelector('.mensaje-musica').textContent = 'Haz clic para reproducir música';
+            }
+        });
+
+        // Precargar el audio cuando la página cargue
+        window.addEventListener('load', function() {
+            audio.load();
+        });
+    </script>
+	
 </body>
 </html>
